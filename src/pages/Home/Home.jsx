@@ -10,13 +10,13 @@ function Home() {
   return(
     <div id="page-landing">
       <div className="content-wrapper">
-        <img src={logoImg} alt="Happy"/>
+        <img src={logoImg} alt="COVID"/>
 
         <main>
           <h1>Acompanhe em tempo real os casos de COVID-19 ao redor do mundo</h1>
         </main>
 
-        <Link to="/app" className="enter-app">
+        <Link to="/Map" className="enter-app">
           <FiArrowRight size={26} color="rgba(0, 0, 0, 0.6)"/>
         </Link>
       </div>
