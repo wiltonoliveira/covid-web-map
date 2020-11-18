@@ -4,16 +4,17 @@ import GoogleMapReact from 'google-map-react';
 import {Grid} from '@material-ui/core'
 
 import InfoCasos from '../../components/InfoCasos/InfoCasos'
+import Marker from '../../components/Mark/Mark'
+import './style.css'
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class SimpleMap extends Component {
   static defaultProps = {
     center: {
-      lat: 10,
+      lat: 20,
       lng: 0
     },
-    zoom: 1
+    zoom: 0
   };
 
   render() {
@@ -25,10 +26,30 @@ class SimpleMap extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text="My Marker"
+          
+          <Marker //BRA
+            lat={-4.564910}
+            lng={-54.394360}
+          />
+
+          <Marker //EUA
+            lat={43.834527}
+            lng={-105.192930}
+          />
+
+          <Marker //RUS
+            lat={62.372755}
+            lng={47.164475}
+          />
+
+          <Marker //CHI
+            lat={39.639538}
+            lng={96.396492}
+          />
+
+          <Marker //ALG
+            lat={32.249974}
+            lng={-1.247671}
           />
         </GoogleMapReact>
         <Grid

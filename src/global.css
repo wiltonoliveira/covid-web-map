@@ -2,11 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
   }
   
   body {
     color: #FFF;
-    background: #ebf2f5;
+    background: linear-gradient(329.54deg, #A92C2C 0%, #DB5E5E 100%);
   }
   
   body, input, button, textarea {
