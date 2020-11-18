@@ -2,14 +2,13 @@ import React from 'react';
 
 import './styles.css'
 
-const numeros = 999
-const dados = 'casos'
 
-function InfoCasos(){
+
+function InfoCasos({numeros, dado}){
     return (
         <div id="info-casos" >
             <p>{numeros}</p>
-            <p>{dados}</p>
+            <p>{dado}</p>
         </div>
     )
 }

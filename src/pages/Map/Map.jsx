@@ -59,9 +59,18 @@ class SimpleMap extends Component {
         alignItems="center"
       
         >
-        <InfoCasos />
-        <InfoCasos />
-        <InfoCasos />
+        <InfoCasos 
+          numeros="10.000.000"
+          dado="Casos"
+        />
+        <InfoCasos 
+          numeros="10.000.000"
+          dado="Mortes"
+        />
+        <InfoCasos 
+          numeros="10.000.000"
+          dado="Recuperados"
+        />
         </Grid>
       </div>
     );
