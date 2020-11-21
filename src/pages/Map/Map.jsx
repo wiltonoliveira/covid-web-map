@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-import {Grid} from '@material-ui/core'
+import { Grid } from '@material-ui/core'
+
+import api from '../../services/api'
 
 import InfoCasos from '../../components/InfoCasos/InfoCasos'
 import Marker from '../../components/Mark/Mark'
 import './style.css'
+
 
 
 class SimpleMap extends Component {
@@ -17,16 +20,48 @@ class SimpleMap extends Component {
     zoom: 0
   };
 
+  constructor(props) {
+    super(props);
+    // Initialize empty state here
+    this.state = {
+      casos: '',
+      mortes: '',
+      recuperados: ''
+    };
+  }
+
+  componentWillMount() {
+    // It's best to use your api call on componentWillMount
+    this.getCasos();
+  }
+
+  getCasos(){
+    api.get("/v3/covid-19/all")
+      .then((response) =>{
+        console.log('Casos: ' + response.data.cases)
+        console.log('Mortes: ' + response.data.deaths)
+        console.log('Recuperados: ' + response.data.recovered)
+        this.setState({
+          casos: response.data.cases,
+          mortes: response.data.deaths,
+          recuperados: response.data.recovered
+        })
+      })
+      .catch((err) => {
+        console.log("Erro ao coletar os dados: " + err);
+      });
+  }
+  
   render() {
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '70vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key:process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
+          bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          
+
           <Marker //BRA
             lat={-4.564910}
             lng={-54.394360}
@@ -53,24 +88,24 @@ class SimpleMap extends Component {
           />
         </GoogleMapReact>
         <Grid
-        container
-        direction="row"
-        justify="space-evenly"
-        alignItems="center"
-      
+          container
+          direction="row"
+          justify="space-evenly"
+          alignItems="center"
+
         >
-        <InfoCasos 
-          numeros="10.000.000"
-          dado="Casos"
-        />
-        <InfoCasos 
-          numeros="10.000.000"
-          dado="Mortes"
-        />
-        <InfoCasos 
-          numeros="10.000.000"
-          dado="Recuperados"
-        />
+          <InfoCasos
+            numeros={this.state.casos}
+            dado="Casos"
+          />
+          <InfoCasos
+            numeros={this.state.mortes}
+            dado="Mortes"
+          />
+          <InfoCasos
+            numeros={this.state.recuperados}
+            dado="Recuperados"
+          />
         </Grid>
       </div>
     );
