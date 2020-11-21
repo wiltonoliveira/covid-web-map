@@ -10,19 +10,24 @@ import Marker from '../../components/Mark/Mark'
 import './style.css'
 
 
-
+/*Por meio dessa classe eu posso usar o GoogleMaps como um componente simples e fica mais fácil 
+adicionar outros componente dentro do mapa
+Bem como fazer as chamadas da disesse.sh via Classe também
+*/
 class SimpleMap extends Component {
+  //dados iniciais do mapa
   static defaultProps = {
+    //coordenadas da onde o mapa vai começar
     center: {
       lat: 20,
       lng: 0
     },
-    zoom: 0
+    zoom: 0 //auto explicativo né?
   };
 
   constructor(props) {
     super(props);
-    // Initialize empty state here
+    // Inicializando os dados que eu quero da disesse.sh
     this.state = {
       casos: '',
       mortes: '',
@@ -31,17 +36,15 @@ class SimpleMap extends Component {
   }
 
   componentWillMount() {
-    // It's best to use your api call on componentWillMount
+    // Fazendo a chamada na disesse.sh e carregando os dados antes de renderizar na tela
     this.getCasos();
   }
 
   getCasos(){
     api.get("/v3/covid-19/all")
       .then((response) =>{
-        console.log('Casos: ' + response.data.cases)
-        console.log('Mortes: ' + response.data.deaths)
-        console.log('Recuperados: ' + response.data.recovered)
         this.setState({
+
           casos: response.data.cases,
           mortes: response.data.deaths,
           recuperados: response.data.recovered
@@ -54,15 +57,14 @@ class SimpleMap extends Component {
   
   render() {
     return (
-      // Important! Always set the container height explicitly
+      // Sempre defina a altura do contêiner explicitamente
       <div style={{ height: '70vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-
-          <Marker //BRA
+          <Marker //BRASIL
             lat={-4.564910}
             lng={-54.394360}
           />
@@ -72,22 +74,23 @@ class SimpleMap extends Component {
             lng={-105.192930}
           />
 
-          <Marker //RUS
+          <Marker //RUSSIA
             lat={62.372755}
             lng={47.164475}
           />
 
-          <Marker //CHI
+          <Marker //CHINA
             lat={39.639538}
             lng={96.396492}
           />
 
-          <Marker //ALG
+          <Marker //ARGÉLIA
             lat={32.249974}
             lng={-1.247671}
           />
         </GoogleMapReact>
-        <Grid
+        <h1 style={{ textAlign: 'center', fontSize:'50px'}}>Dados ao redor do mundo</h1>
+        <Grid //Informações da API
           container
           direction="row"
           justify="space-evenly"
