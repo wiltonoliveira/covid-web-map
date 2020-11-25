@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Home from './pages/Home/Home';
-import Map from './pages/Map/Map';
+import Map from './pages/WorldMap/WorldMap';
 import Country from './pages/CountryMap/Country'
 
 function Routes() {
