@@ -1,8 +1,6 @@
 import React, {useEffect, useState}  from 'react';
 import { Grid } from '@material-ui/core'
-
 import api from '../../services/api'
-
 import InfoCasos from '../../components/InfoCasos/InfoCasos'
 import Mapa from '../../components/Mapa/Mapa'
 
@@ -10,19 +8,6 @@ import Mapa from '../../components/Mapa/Mapa'
 function WorldMap() {
 
     const [dados, setDados] = useState([])
-
-    /*
-    const promessa =  api.get("/v3/covid-19/all")
-      .then((response) =>{
-          //console.log(response.data) 
-          return response.data
-      })
-      .catch((err) => {
-        console.log("Erro ao coletar os dados: " + err);
-      });
-      */
-
-    
     
     useEffect(() => {
         async function promessaFunction(){ 
@@ -31,12 +16,10 @@ function WorldMap() {
             setDados(response.data)
     }
         promessaFunction()
-        
     }, [])
 
     return (
       // Sempre defina a altura do contêiner explicitamente
-
       <div>
           <Mapa 
           latitude = {20}
@@ -67,7 +50,5 @@ function WorldMap() {
         </Grid>
       </div>
     );
-  
 }
-
 export default WorldMap;

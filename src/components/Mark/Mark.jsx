@@ -1,18 +1,12 @@
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 import MarkImg from '../../assets/marker.svg'
 import './style.css'
 
-
-
-
-function Marker(){
-    return (
-        <Link to="/Country">
+function Marker(){   
+    return ( 
         <div id="marker">
-            <img className="mark" src={MarkImg} alt="covid-marker">
-            </img>
+            <img className="mark" src={MarkImg} alt="covid-marker" /> 
         </div>
-        </Link>
     )
 }
 
