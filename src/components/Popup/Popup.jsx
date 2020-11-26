@@ -3,7 +3,7 @@ import api from '../../services/api'
 import Mark from '../Mark/Mark'
 import './style.css'
 
-export default function Popup({id, pais}){
+export default function Popup({id}){
 
     const [dados, setDados] = useState([])
     
@@ -14,8 +14,7 @@ export default function Popup({id, pais}){
             setDados(response.data)
     }
         promessaFunction()
-    }, [])
-   
+    }, [id])
     
     function showPopup() {
         var popup = document.getElementById(id);
