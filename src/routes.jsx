@@ -3,8 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Home from './pages/Home/Home';
 import Map from './pages/WorldMap/WorldMap';
-import Country from './pages/CountryMap/Country'
-//import Teste from './pages/Teste/Teste'
+
+
 
 function Routes() {
   return (
@@ -12,8 +12,6 @@ function Routes() {
       <Switch>
         <Route path="/" exact component={Home}/>
         <Route path="/map" component={Map}/>
-        <Route path="/country" component={Country}/>
-        
       </Switch>
     </BrowserRouter>
   );

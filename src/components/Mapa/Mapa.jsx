@@ -23,36 +23,36 @@ function Mapa({latitude, longitude, zoom, comprimento, altura}){
             <Popup //BRASIL
             lat={-4.564910}
             lng={-54.394360}
-            pais='brazil'
             id="bra"
+            pais="Brasil"
             />
             
             <Popup //EUA
             lat={43.834527}
             lng={-105.192930}
-            pais='us'
             id="us"
+            pais="EUA"
             />
 
             <Popup //RUSSIA
-            lat={59.372755}
-            lng={47.164475}
-            pais='russia'
+            lat={57.372755}
+            lng={36.164475}
             id="rus"
+            pais="Russia"
             />
 
             <Popup //CHINA
             lat={39.639538}
             lng={96.396492}
-            pais='china'
-            id="chi"
+            id="cn"
+            pais="China"
             />
 
             <Popup //ARGÉLIA
             lat={32.249974}
             lng={-1.247671}
-            pais='argelia'
-            id="arg"
+            id="dz"
+            pais="Argélia"
             />
             </GoogleMapReact>
         </div>

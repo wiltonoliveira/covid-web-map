@@ -12,7 +12,7 @@ function WorldMap() {
     useEffect(() => {
         async function promessaFunction(){ 
             const response = await api.get("/v3/covid-19/all")
-            console.log(response)
+            //console.log(response)
             setDados(response.data)
     }
         promessaFunction()
@@ -28,7 +28,7 @@ function WorldMap() {
           comprimento = '100%'
           altura = '70vh'
           />
-          <h1 style={{ textAlign: 'center', fontSize:'50px'}}>Dados ao redor do {dados.local}</h1>
+          <h1 style={{ textAlign: 'center', fontSize:'50px'}}>Dados ao redor do mundo</h1>
           <Grid //Informações da API
             container
             direction="row"
