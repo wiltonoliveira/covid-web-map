@@ -18,6 +18,7 @@ function WorldMap() {
         promessaFunction()
     }, [])
 
+    
     return (
       // Sempre defina a altura do contêiner explicitamente
       <div>
