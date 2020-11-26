@@ -12,7 +12,7 @@ import Mapa from '../../components/Mapa/Mapa'
 adicionar outros componente dentro do mapa
 Bem como fazer as chamadas da disesse.sh via Classe também
 */
-class SimpleMap extends Component {
+class WorldMap extends Component {
 
   constructor(props) {
     super(props);
@@ -45,8 +45,6 @@ class SimpleMap extends Component {
       });
   }
   
-
-
   render() {
     return (
       // Sempre defina a altura do contêiner explicitamente
@@ -64,7 +62,6 @@ class SimpleMap extends Component {
           direction="row"
           justify="space-evenly"
           alignItems="center"
-
         >
           <InfoCasos
             numeros={this.state.casos}
@@ -86,4 +83,4 @@ class SimpleMap extends Component {
   }
 }
 
-export default SimpleMap;
+export default WorldMap;
