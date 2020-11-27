@@ -2,9 +2,7 @@
     width: 100vw;
     height: 100vh;
     background: linear-gradient(329.54deg, #A92C2C 0%, #DB5E5E 100%);
-    /* background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); */
-    /* background-image: linear-gradient(329.54deg, #30cfd0 0%, #330867 100%); */
-  
+    padding: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,9 +72,9 @@
     align-items: center;
     justify-content: center;
   
-    transition: background-color 0.2s;
+    transition: background-color 0.3s;
   }
   
   .content-wrapper .enter-app:hover {
-    background: #EB4040;
+    background: #cec9c9;
   }

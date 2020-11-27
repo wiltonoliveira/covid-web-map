@@ -3,10 +3,11 @@
     height: 200px;
     background: #ee5c5c;
     margin-top: 2%;
-    border-radius: 10%;
+    border-radius: 8%;
 }
 
 #info-casos p{
+    padding-top: 20px;
     text-align: center;
-    font-size: 64px;
+    font-size: 50px;
 }
