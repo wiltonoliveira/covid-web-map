@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import ReactMapGL, {Marker} from "react-map-gl"
 import * as countriesCenter from '../../dataset/world_data.json'
+//import * as countriesCenter from '../../dataset/google_world.json'
+//import * as countriesCenter from '../../dataset/world_data_short.json'
 import Popup from '../../components/Popup/Popup'
 import "./style.css"
 
@@ -31,14 +33,12 @@ export default function Mapbox(){
                 latitude={pais.Latitude}
                 longitude={pais.Longitude}
                 >
-                    <div className="marker">
-                       
-                            
-                        <Popup 
-                            lat={view.latitude}
-                            long={view.longitude}
-                            id={pais.postal}
-                        />
+                    <div className="marker">     
+                      <Popup
+                        long={pais.Longitude}
+                        lat={pais.Latitude}
+                        id={pais.postal}
+                      />
                     </div>
                 </Marker>
             ))}
